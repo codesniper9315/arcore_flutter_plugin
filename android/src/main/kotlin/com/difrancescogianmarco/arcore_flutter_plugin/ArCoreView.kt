@@ -11,6 +11,8 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import com.difrancescogianmarco.arcore_flutter_plugin.flutter_models.FlutterArCoreHitTestResult
 import com.difrancescogianmarco.arcore_flutter_plugin.flutter_models.FlutterArCoreNode
 import com.difrancescogianmarco.arcore_flutter_plugin.flutter_models.FlutterArCorePose
@@ -243,7 +245,7 @@ class ArCoreView(val activity: Activity, context: Context, messenger: BinaryMess
 
     private fun setupLifeCycle(context: Context) {
         activityLifecycleCallbacks = object : Application.ActivityLifecycleCallbacks {
-            override fun onActivityCreated(activity: Activity?, savedInstanceState: Bundle?) {
+            override fun onActivityCreated(@NonNull activity: Activity?, @NonNull savedInstanceState: Bundle?) {
                 debugLog("onActivityCreated")
 //                maybeEnableArButton()
             }
